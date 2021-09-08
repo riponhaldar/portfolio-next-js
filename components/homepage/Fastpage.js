@@ -16,7 +16,7 @@ function Fastpage() {
   });
   return (
     <>
-      <div className='sm:mt-32 z-50 mt-20 lg:px-8 block mb-20'>
+      <div className='sm:mt-56 z-50 mt-20 lg:px-8 block  md:h-screen mb-20 sm:mb-1'>
         <div className='sm:mb-12 mb-4' ref={(el) => (content = el)}>
           <h1>
             <div className='text-center wellcome sm:mr-40 mr-16 text-gray-50  xl:text-9xl lg:text-8xl sm:text-6xl text-4xl overflow-hidden font-sans font-bold'>
