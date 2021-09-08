@@ -1,4 +1,4 @@
-function Homehader() {
+function HomeHeader() {
   return (
     <>
       <div className='sm:mt-32 z-50 mt-20 lg:px-8 block mb-20'>
@@ -18,4 +18,4 @@ function Homehader() {
   );
 }
 
-export default Homehader;
+export default HomeHeader;
