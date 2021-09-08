@@ -1,6 +1,9 @@
 /* ./styles/globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&display=swap');
 @tailwind base;
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
 @tailwind components;
 @tailwind utilities;
 /* @font-face {
