@@ -1,31 +1,5 @@
-import { TimelineLite, TweenMax, Power3 } from 'gsap';
-// import { TimelineLite } from 'gsap/gsap-core';
-import { useEffect, useRef } from 'react';
+
 function Homehader() {
-  // let app = useRef(null);
-  // let content = useRef(null);
-  // let contentt = useRef(null);
-  let tl = new TimelineLite();
-  useEffect(() => {
-    // const heaLineFrist = content.children[0];
-    // const heaLinelast = heaLineFrist.nextSibling;
-    //   tl.staggerFrom(
-    //     [heaLineFrist.children, heaLinelast.children],
-    //     1,
-    //     {
-    //       y: 120,
-    //       ease: Power3.easeOut,
-    //       delay: 0.8,
-    //       rotation: 4,
-    //     },
-    //     0.15,
-    //     'Start'
-    //   ).from([contentt], 0.7, {
-    //     y: 22,
-    //     opacity: 0,
-    //   });
-    // });
-  });
   return (
     <>
       <div className='sm:mt-32 z-50 mt-20 lg:px-8 block mb-20'>

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import About from '../component/homepage/About';
-import Homehader from '../component/HomePage/homeHeader';
+// import Homehader from '../component/HomePage/homeHeader';
 export default function Home() {
   return (
     <>
@@ -12,7 +12,7 @@ export default function Home() {
       <div className='cursor absolute w-2 h-2 bg-gray-200 rounded-full "transition duration-100 ease-in-out'></div>
 
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
-        <Homehader />
+        {/* <Homehader /> */}
         <About />
       </div>
       <div className=''>
