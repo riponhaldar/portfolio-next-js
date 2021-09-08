@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import About from '../components/homepage/About';
-import HomeHeader from '../components/HomePage/HomeHeader';
+import HedeFast from '../components/HomePage/HedeFast';
 export default function Home() {
   return (
     <>
@@ -12,7 +12,7 @@ export default function Home() {
       <div className='cursor absolute w-2 h-2 bg-gray-200 rounded-full "transition duration-100 ease-in-out'></div>
 
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
-        <HomeHeader />
+        <HedeFast />
         <About />
       </div>
       <div className=''>
