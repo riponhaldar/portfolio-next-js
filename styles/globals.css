@@ -15,6 +15,9 @@
   body {
     background: #000;
   }
+  .fullpags {
+    visibility: hidden;
+  }
   .link a:after {
     display: block;
     content: '';

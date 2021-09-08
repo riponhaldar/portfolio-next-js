@@ -3,9 +3,7 @@ import { gsap, TimelineLite } from 'gsap';
 import { useEffect } from 'react';
 function About() {
   let tl = new TimelineLite({ delay: 0.3 });
-  useEffect(() => {
-    tl.from('.leading-tight', { y: 14, opacity: 0 });
-  });
+  useEffect(() => {});
   return (
     <>
       <div className='px-4'>
