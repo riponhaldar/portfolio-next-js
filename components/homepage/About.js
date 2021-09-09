@@ -12,12 +12,12 @@ function About() {
     gsap.from(abouttextFast, {
       duration: 10,
       opacity: 0,
-      y: -110,
+      y: -130,
       scrollTrigger: {
         scrub: true,
         trigger: abouttextFast,
         start: 'top bottom-=250',
-        end: 'bottom bottom-=500',
+        end: 'bottom bottom-=200',
         // markers: true,
       },
     });
@@ -28,8 +28,8 @@ function About() {
       scrollTrigger: {
         scrub: true,
         trigger: abouttextSec,
-        start: 'top bottom-=250',
-        end: 'bottom bottom-=500',
+        start: 'top bottom-=350',
+        end: 'bottom bottom-=200',
         // markers: true,
       },
     });
@@ -37,9 +37,12 @@ function About() {
   });
   return (
     <>
-      <div className='px-2 md:px-4'>
-        <div className='text-3xl md:text-5xl font-semibold text-blue-400 ml-2 capitalize mb-8'>
-          about -
+      <div className='px-2 md:px-4 mb-20'>
+        <div className='text-3xl md:text-5xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
+          <p className='inline-block px-2  relative '>
+            <span className='after__ele relative z-50'>About</span>
+            <span className='absolute opacity-80 bg-purple-900	w-full h-2 md:h-4 left-0 bottom-5 md:bottom-0 z-0 '></span>
+          </p>
         </div>
         <div iv className='px-2 md:px-8 text-left'>
           <div

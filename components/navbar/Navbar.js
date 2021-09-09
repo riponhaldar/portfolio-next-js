@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='fixed w-full' ref={(el) => (navLinks = el)}>
+      <div className='fixed w-full z-50' ref={(el) => (navLinks = el)}>
         <div className='md:container mx-auto  px-6 md:px-16'>
           <div>
             <div className='flex justify-between mt-6 p-4   top-0 w-full items-center'>

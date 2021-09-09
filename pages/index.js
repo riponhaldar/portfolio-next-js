@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import About from '../components/homepage/About';
 import Fastpage from '../components/homepage/Fastpage';
+import Projects from '../components/homepage/Projects';
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
         <Fastpage />
         <About />
+        <Projects />
       </div>
       <div className=''>
         <div className='absolute w-px h-full top-0 left-0 bg-gray-800 z-0'></div>
