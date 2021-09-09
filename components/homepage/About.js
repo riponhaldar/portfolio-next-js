@@ -9,10 +9,10 @@ function About() {
   useEffect(() => {
     const abouttextFast = aboutTextEnd.children[0];
     const abouttextSec = aboutTextEnd.children[2];
-    gsap.from(abouttextFast, {
-      duration: 10,
+    gsap.from(abouttextFast, 1.2, {
+      duration: 15,
       opacity: 0,
-      y: -130,
+      y: -100,
       scrollTrigger: {
         scrub: true,
         trigger: abouttextFast,
@@ -22,13 +22,13 @@ function About() {
       },
     });
     gsap.from(abouttextSec, {
-      duration: 10,
+      duration: 15,
       opacity: 0,
-      y: 110,
+      x: 100,
       scrollTrigger: {
         scrub: true,
         trigger: abouttextSec,
-        start: 'top bottom-=350',
+        start: 'top bottom-=250',
         end: 'bottom bottom-=200',
         // markers: true,
       },
@@ -41,7 +41,7 @@ function About() {
         <div className='text-3xl md:text-5xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
           <p className='inline-block px-2  relative '>
             <span className='after__ele relative z-50'>About</span>
-            <span className='absolute opacity-80 bg-purple-900	w-full h-2 md:h-4 left-0 bottom-5 md:bottom-0 z-0 '></span>
+            <span className='absolute opacity-80 bg-purple-900	w-full h-3 md:h-4 left-0 bottom-0 md:bottom-0 z-0 '></span>
           </p>
         </div>
         <div iv className='px-2 md:px-8 text-left'>
