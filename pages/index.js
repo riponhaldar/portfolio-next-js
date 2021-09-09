@@ -3,8 +3,43 @@ import About from '../components/homepage/About';
 import Fastpage from '../components/homepage/Fastpage';
 import Link from 'next/link';
 import Image from 'next/image';
-import profilePic from '../public/Screenshot.png';
+import { gsap, TimelineLite, Power3 } from 'gsap';
+import { useEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 export default function Home({ posts }) {
+  let projectText = useRef(null);
+
+  let tl = new TimelineLite({ delay: 0.8 });
+  useEffect(() => {
+    const projectTextt = projectText.children[0];
+    const projectTextSpan = projectText.children[1];
+
+    tl.from(projectTextSpan, {
+      duration: 5,
+      opacity: 0,
+      x: -50,
+      scrollTrigger: {
+        scrub: true,
+        trigger: projectTextt,
+        start: 'top bottom-=100',
+        end: 'bottom bottom-=200',
+        // markers: true,
+      },
+    });
+    tl.from(projectTextt, {
+      duration: 10,
+      opacity: 0,
+      x: 100,
+      scrollTrigger: {
+        scrub: true,
+        trigger: projectTextt,
+        start: 'top bottom-=100',
+        end: 'bottom bottom-=200',
+        // markers: true,
+      },
+    });
+  });
   return (
     <>
       <Head>
@@ -21,7 +56,10 @@ export default function Home({ posts }) {
         <div className=' mt-8'>
           <div className='relative'>
             <div className='text-3xl md:text-5xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
-              <p className='inline-block px-2  relative '>
+              <p
+                className='inline-block px-2 relative'
+                ref={(el) => (projectText = el)}
+              >
                 <span className='after__ele relative z-50'>Recent Project</span>
                 <span className='absolute opacity-80 bg-purple-900	w-full h-3 md:h-4 left-0 bottom-1 md:bottom-0 z-0 '></span>
               </p>
@@ -31,46 +69,42 @@ export default function Home({ posts }) {
                 {/* car worksparts*/}
 
                 {posts.map((post) => {
-                  const { id, title, img, desc, url, view } = post;
+                  const { id, title, img, desc, url, view, category } = post;
+
                   return (
                     <div
-                      id={post.id}
+                      key={id}
                       className='relative md:flex mt-20 justify-between'
                     >
-                      <div class='xl:mr-20 mr-10 mb-10'>
+                      <div className='xl:mr-20 mr-10 mb-10'>
                         <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>
-                          {post.title}
+                          {title}
                         </p>
-                        <span className='text-red-100 text-base'>
-                          {post.desc}
-                        </span>
-                        <div className='text-gray-100 mt-4'>
-                          {post.category}
-                        </div>
+                        <span className='text-red-100 text-base'>{desc}</span>
+                        <div className='text-gray-100 mt-4'>{category}</div>
                         <ul className='flex mt-4'>
                           <li className='mr-2'>
-                            <Link href={post.view}>
+                            <Link href={view}>
                               <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
                                 Live
                               </a>
                             </Link>
                           </li>
                           <li>
-                            <Link href={post.url}>
+                            <Link href={url}>
                               <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                                scrose
+                                sources
                               </a>
                             </Link>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <img src={img} alt='worktimg' />
+                        <img key={img} src={img} alt='worktimg' />
                       </div>
                     </div>
                   );
                 })}
-
                 {/* car worksparts end*/}
               </div>
             </div>
