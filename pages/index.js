@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import About from '../components/homepage/About';
 import Fastpage from '../components/homepage/Fastpage';
-import Projects from '../components/homepage/Projects';
-export default function Home() {
+import Link from 'next/link';
+import Image from 'next/image';
+import profilePic from '../public/Screenshot.png';
+export default function Home({ posts }) {
   return (
     <>
       <Head>
@@ -15,15 +17,77 @@ export default function Home() {
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
         <Fastpage />
         <About />
-        <Projects />
-      </div>
-      <div className=''>
-        <div className='absolute w-px h-full top-0 left-0 bg-gray-800 z-0'></div>
-        <div className='absolute w-px h-full top-0 left-1/4 bg-gray-800'></div>
-        <div className='absolute w-px h-full top-0 left-2/4 bg-gray-800 z-0'></div>
-        <div className='absolute w-px h-full top-0 left-3/4 bg-gray-800 z-0'></div>
-        <div className='absolute w-px h-full top-0 right-0 bg-gray-800 z-0'></div>
+        {/* project parts*/}
+        <div className=' mt-8'>
+          <div className='relative'>
+            <div className='text-3xl md:text-5xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
+              <p className='inline-block px-2  relative '>
+                <span className='after__ele relative z-50'>Recent Project</span>
+                <span className='absolute opacity-80 bg-purple-900	w-full h-3 md:h-4 left-0 bottom-1 md:bottom-0 z-0 '></span>
+              </p>
+            </div>
+            <div className='text-gray-50  relative md:mx-12 mx-4 px-2'>
+              <div>
+                {/* car worksparts*/}
+
+                {posts.map((post) => {
+                  const { id, title, img, desc, url, view } = post;
+                  return (
+                    <div
+                      id={post.id}
+                      className='relative md:flex mt-20 justify-between'
+                    >
+                      <div class='xl:mr-20 mr-10 mb-10'>
+                        <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>
+                          {post.title}
+                        </p>
+                        <span className='text-red-100 text-base'>
+                          {post.desc}
+                        </span>
+                        <div className='text-gray-100 mt-4'>
+                          {post.category}
+                        </div>
+                        <ul className='flex mt-4'>
+                          <li className='mr-2'>
+                            <Link href={post.view}>
+                              <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
+                                Live
+                              </a>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={post.url}>
+                              <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
+                                scrose
+                              </a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <img src={img} alt='worktimg' />
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* car worksparts end*/}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* project parts end*/}
       </div>
     </>
   );
+}
+export async function getServerSideProps() {
+  const res = await fetch('https://riponhaldar.github.io/json-api/db.json');
+  const post = await res.json();
+
+  return {
+    props: {
+      posts: post,
+    },
+  };
 }

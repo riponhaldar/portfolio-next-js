@@ -20,45 +20,7 @@ function Card() {
           <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>
             Teletype for Atom
           </p>
-          <span className='text-red-100 text-base'>
-            Great things happen when developers work together—from teaching and
-            sharing knowledge to building better software. Teletype for Atom
-            makes collaborating on code just as easy as it is to code alone,
-            right from your editor.
-          </span>
-          <div className='text-gray-100 mt-4'>#React #NExt #tailwindCss</div>
-          <ul className='flex mt-4'>
-            <li className='mr-2'>
-              <Link href=''>
-                <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                  Live
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href=''>
-                <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                  scrose
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <Image src={profilePic} />
-        </div>
-      </div>
-      <div className='relative md:flex mt-20 justify-between'>
-        <div class='xl:mr-20 mr-10 mb-10'>
-          <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>
-            Teletype for Atom
-          </p>
-          <span className='text-red-100 text-base'>
-            Great things happen when developers work together—from teaching and
-            sharing knowledge to building better software. Teletype for Atom
-            makes collaborating on code just as easy as it is to code alone,
-            right from your editor.
-          </span>
+          <span className='text-red-100 text-base'></span>
           <div className='text-gray-100 mt-4'>#React #NExt #tailwindCss</div>
           <ul className='flex mt-4'>
             <li className='mr-2'>
