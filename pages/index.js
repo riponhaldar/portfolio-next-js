@@ -74,7 +74,7 @@ export default function Home({ posts }) {
                   return (
                     <div
                       key={id}
-                      className='relative md:flex mt-20 justify-between'
+                      className='relative md:flex md:mt-40 items-center	e mt-10 justify-between'
                     >
                       <div className='xl:mr-20 mr-10 mb-10'>
                         <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>

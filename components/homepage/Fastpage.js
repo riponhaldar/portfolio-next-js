@@ -9,9 +9,9 @@ function Fastpage() {
     let wellcome = content.children[0].children[0];
     const website = wellcome.nextSibling;
     tl.staggerFrom([wellcome.children, website.children], 1.5, {
-      y: 120,
+      y: 125,
       ease: Power3.easeOut,
-      rotation: 10,
+      rotation: 5,
     }).from(contentp, 0.8, { y: 20, opacity: 0 });
   });
   return (
