@@ -21,7 +21,7 @@ function Navbar() {
       <div className='fixed w-full z-50 ' ref={(el) => (navLinks = el)}>
         <div className='md:container mx-auto  px-6 md:px-16'>
           <div>
-            <div className='flex justify-between mt-2 p-4   top-0 w-full items-center'>
+            <div className='flex justify-between mt-2 p-4 top-0 w-full items-center'>
               <div>
                 <Link href='/'>
                   <a>

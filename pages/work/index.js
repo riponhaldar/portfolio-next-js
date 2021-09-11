@@ -9,14 +9,14 @@ import { decl } from 'postcss';
 
 function Work({ posts }) {
   const allCategories = [
-    'all project',
+    'AllPoject',
     ...new Set(posts.map((post) => post.category)),
   ];
   const [menuItems, setMenuItems] = useState(posts);
   const [categories, setCategories] = useState(allCategories);
 
   const filterItems = (category) => {
-    if (category === 'all project') {
+    if (category === 'AllPoject') {
       setMenuItems(posts);
       return;
     }
@@ -35,7 +35,7 @@ function Work({ posts }) {
         <div className='mt-20'>
           <div className='text-gray-50 sm:flex flex-wrap'>
             <div className='sm:w-1/5 w-full mb-7 border-red-400'>
-              <div>
+              <div className='sm:ml-10'>
                 <div className='text-2xl md:text-4xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
                   <p className='inline-block px-2  relative'>
                     <span className='after__ele relative z-50'>
@@ -53,7 +53,7 @@ function Work({ posts }) {
                         key={index}
                         onClick={() => filterItems(category)}
                       >
-                        <a className='text-lg bg-purple-800 text-gray-200 px-4 rounded-lg items-center'>
+                        <a className='sm:text-md text-lg bg-purple-800 text-gray-200 px-4 py-1 rounded-lg items-center'>
                           #{category}
                         </a>
                       </li>
@@ -63,21 +63,36 @@ function Work({ posts }) {
               </div>
             </div>
             <div className='sm:w-4/5 w-full '>
-              <div>
+              <div className='sm:ml-10'>
                 <div className='sm:flex justify-center w-full flex-wrap '>
                   {/* card start*/}
                   {menuItems.map((post) => {
-                    const { id, title, img, desc, url, view, category } = post;
+                    const { id, title, img, desc, url, view, category, uses } =
+                      post;
                     return (
                       <Link href='/' key={id}>
-                        <div className='w-96  sm:mr-4 mb-10 sm:mx-px  m-auto'>
-                          <img className='w-full h-64 ' src={img} alt='' />
+                        <div className=' w-96 sm:mr-8 sm:mb-10 mb-8 sm:mx-px pr-4 mx-auto cursor-pointer overflow-hidden'>
+                          <img
+                            className='sm:w-full h-56	mx-auto rounded '
+                            src={img}
+                            alt=''
+                          />
 
-                          <div className=''>
-                            <span className='text-3xl block font-serif capitalize text-purple-600'>
+                          <div className='mt-2'>
+                            <span className='text-2xl block font-serif capitalize text-gray-300'>
                               {title}
                             </span>
-                            <span className='text-lg'>{category}</span>
+                            <div className='text-sm flex mt-2 cursor-pointer'>
+                              <span className='mr-2  rounded px-2 delay-100 ease-out bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
+                                {uses.fremwork}
+                              </span>
+                              <span className='mr-2  rounded px-2  delay-100 ease-out bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
+                                {uses.fremwork2}
+                              </span>
+                              <span className='mr-2  rounded px-2  delay-100 ease-out	bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
+                                {uses.fremwork3}
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </Link>
