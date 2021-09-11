@@ -5,63 +5,8 @@ import Head from 'next/head';
 import { gsap, TimelineLite, Power3 } from 'gsap';
 import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-import link from 'next/link';
+
 function Work({ posts }) {
-  // Animation
-  let card = useRef(null);
-  let tl = new TimelineLite({ delay: 0.2 });
-
-  useEffect(() => {
-    const allCards = gsap.utils.toArray('.uls .lis');
-
-    tl.from('ul li', {
-      duration: 0.4,
-      x: -10,
-      opacity: 0,
-      stagger: 0.4,
-    }).from(
-      '.uls',
-      {
-        duration: 1.8,
-        x: -10,
-        opacity: 0,
-        stagger: 0.4,
-      },
-      '-=0.8'
-    );
-    allCards.forEach((card) => {
-      tl.from(
-        card,
-
-        {
-          duration: 5,
-          opacity: 0,
-          y: 120,
-          scrollTrigger: {
-            scrub: true,
-            trigger: card,
-            start: 'top bottom-=100',
-            end: 'bottom bottom-=100',
-            // markers: true,
-          },
-        }
-      );
-    });
-    // tl.from('.uls .lis', {
-    //   duration: 5,
-    //   opacity: 0,
-    //   x: -50,
-    //   scrollTrigger: {
-    //     scrub: true,
-    //     trigger: '.lis',
-    //     start: 'top bottom-=100',
-    //     end: 'bottom bottom-=200',
-    //     markers: true,
-    //   },
-    // });
-  });
-  // all project categories
   const allCategories = ['All', ...new Set(posts.map((post) => post.category))];
   const [menuItems, setMenuItems] = useState(posts);
   const [categories, setCategories] = useState(allCategories);
@@ -74,9 +19,6 @@ function Work({ posts }) {
     const newItems = posts.filter((post) => post.category === category);
     setMenuItems(newItems);
   };
-  const img = {
-    width: '100%',
-  };
 
   return (
     <>
@@ -87,66 +29,53 @@ function Work({ posts }) {
       </Head>
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
         <div className='mt-20'>
-          <ul className='catagray w-full flex justify-center text-center align-middle text-gray-50'>
-            {categories.map((category, index) => {
-              return (
-                <li
-                  className='mr-2 px-2 rounded text-red-50 hover:bg-gray-100 hover:text-gray-900'
-                  type='button'
-                  key={index}
-                  onClick={() => filterItems(category)}
-                >
-                  {category}
-                </li>
-              );
-            })}
-          </ul>
-          <div className='mt-4 allcards'>
-            <div className='uls flex flex-wrap'>
-              {/* car worksparts*/}
-              {menuItems.map((post) => {
-                const { id, title, img, desc, url, view, category } = post;
-                return (
-                  <div
-                    key={id}
-                    className='lis relative md:flex md:mt-40 items-center	e mt-10 justify-between'
-                    ref={(el) => (card = el)}
-                  >
-                    <div className='xl:mr-20 mr-10 mb-10'>
-                      <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>
-                        {title}
-                      </p>
-                      <span className='text-red-100 text-base'>{desc}</span>
-                      <div className='text-gray-100 mt-4'>{category}</div>
-                      <div className='flex mt-4'>
-                        <div className='mr-2'>
-                          <Link href={view}>
-                            <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                              Live
-                            </a>
-                          </Link>
+          <div className='text-gray-50 sm:flex flex-wrap'>
+            <div className='sm:w-1/5 w-full mb-7 border-red-400'>
+              <div>
+                <div className='text-2xl md:text-4xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
+                  <p className='inline-block px-2  relative'>
+                    <span className='after__ele relative z-50'>
+                      All Projects
+                    </span>
+                    <span className='absolute opacity-80 bg-purple-900	w-full h-2 md:h-2 left-0 bottom-0 md:bottom-0 z-0'></span>
+                  </p>
+                </div>
+                <ul className='flex sm:flex-col list-disc w-full text-gray-50 overflow-x-auto'>
+                  {categories.map((category, index) => {
+                    return (
+                      <li
+                        className='cursor-pointer list-disc sm:mb-5 mb-2 mr-2 '
+                        type='button'
+                        key={index}
+                        onClick={() => filterItems(category)}
+                      >
+                        <a className='text-lg bg-purple-800 text-gray-200 px-4 rounded-lg items-center'>
+                          {category}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+            <div className='sm:w-4/5 w-full '>
+              <div>
+                <div className='sm:flex justify-center w-full flex-wrap '>
+                  {menuItems.map((post) => {
+                    const { id, title, img, desc, url, view, category } = post;
+                    return (
+                      <Link href='/'>
+                        <div
+                          key={id}
+                          className='w-96 h-64 sm:mr-4 mb-8 sm:mx-px  m-auto'
+                        >
+                          <img className='w-full h-full' src={img} alt='' />
                         </div>
-                        <div>
-                          <Link href={url}>
-                            <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                              sources
-                            </a>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        className='imgs'
-                        key={img}
-                        src={img}
-                        alt='worktimg'
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-              {/* car worksparts end*/}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
