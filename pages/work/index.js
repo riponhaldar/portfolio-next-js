@@ -5,14 +5,18 @@ import Head from 'next/head';
 import { gsap, TimelineLite, Power3 } from 'gsap';
 import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { decl } from 'postcss';
 
 function Work({ posts }) {
-  const allCategories = ['All', ...new Set(posts.map((post) => post.category))];
+  const allCategories = [
+    'all project',
+    ...new Set(posts.map((post) => post.category)),
+  ];
   const [menuItems, setMenuItems] = useState(posts);
   const [categories, setCategories] = useState(allCategories);
 
   const filterItems = (category) => {
-    if (category === 'All') {
+    if (category === 'all project') {
       setMenuItems(posts);
       return;
     }
@@ -50,7 +54,7 @@ function Work({ posts }) {
                         onClick={() => filterItems(category)}
                       >
                         <a className='text-lg bg-purple-800 text-gray-200 px-4 rounded-lg items-center'>
-                          {category}
+                          #{category}
                         </a>
                       </li>
                     );
@@ -61,19 +65,25 @@ function Work({ posts }) {
             <div className='sm:w-4/5 w-full '>
               <div>
                 <div className='sm:flex justify-center w-full flex-wrap '>
+                  {/* card start*/}
                   {menuItems.map((post) => {
                     const { id, title, img, desc, url, view, category } = post;
                     return (
-                      <Link href='/'>
-                        <div
-                          key={id}
-                          className='w-96 h-64 sm:mr-4 mb-8 sm:mx-px  m-auto'
-                        >
-                          <img className='w-full h-full' src={img} alt='' />
+                      <Link href='/' key={id}>
+                        <div className='w-96  sm:mr-4 mb-10 sm:mx-px  m-auto'>
+                          <img className='w-full h-64 ' src={img} alt='' />
+
+                          <div className=''>
+                            <span className='text-3xl block font-serif capitalize text-purple-600'>
+                              {title}
+                            </span>
+                            <span className='text-lg'>{category}</span>
+                          </div>
                         </div>
                       </Link>
                     );
                   })}
+                  {/* card start*/}
                 </div>
               </div>
             </div>
