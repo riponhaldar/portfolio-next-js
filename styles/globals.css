@@ -1,5 +1,5 @@
 /* ./styles/globals.css */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Domine:wght@500&display=swap');
 @tailwind base;
 /* Start purging... */
 @tailwind components;
@@ -13,7 +13,7 @@
 
 @layer base {
   body {
-    background: #161617;
+    background: #fcfcfc;
   }
   .fullpags {
     visibility: hidden;
@@ -22,7 +22,7 @@
     display: block;
     content: '';
     height: 2px;
-    background-color: #fff;
+    background-color: #111827;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -33,7 +33,41 @@
     transition: transform 0.3s cubic-bezier(0.5, 0.7, 0.4, 1);
     transform: translateX(0);
   }
-
+  .allimages {
+    transition: all 0.2s ease-in-out;
+  }
+  .allimages:hover {
+    transform: scale(1.1);
+  }
+  .cards {
+    width: 600px;
+  }
+  .cards-text {
+    text-align: center;
+    top: 50%;
+    left: 0;
+    width: 90vw;
+    transform: translateY(-50%);
+  }
+  .cards-text span {
+    position: absolute;
+    line-height: 2;
+    left: 0;
+    transform: translateX(-200%);
+  }
+  .whitespace {
+    /* white-space: pre-line; */
+  }
   @media only screen and (max-width: 900px) {
+    .cards-text {
+      text-align: start;
+      top: -32px;
+      right: 0;
+    }
+    .cards-text span {
+      position: absolute;
+      top: 40px;
+      transform: translateX(-200%);
+    }
   }
 }

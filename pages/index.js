@@ -55,56 +55,64 @@ export default function Home({ posts }) {
         {/* project parts*/}
         <div className=' mt-8'>
           <div className='relative'>
-            <div className='text-3xl md:text-5xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
+            <div className='text-3xl md:text-5xl relative  font-semibold  text-gray-800 ml-2 capitalize mb-8'>
               <p
                 className='inline-block px-2 relative'
                 ref={(el) => (projectText = el)}
               >
                 <span className='after__ele relative z-50'>Recent Project</span>
-                <span className='absolute opacity-80 bg-purple-900	w-full h-3 md:h-4 left-0 bottom-1 md:bottom-0 z-0 '></span>
+                <span className='absolute opacity-80 bg-purple-200	w-full h-3 md:h-4 left-0 bottom-1 md:bottom-0 z-0 '></span>
               </p>
             </div>
-            <div className='text-gray-50  relative md:mx-12 mx-4 px-2'>
+            <div className='text-gray-800  relative md:mx-12 mx-4 px-2'>
               <div>
                 {/* car worksparts*/}
+                <div className='mt-28'>
+                  <div>
+                    {posts.map((post) => {
+                      const {
+                        id,
+                        title,
+                        img,
+                        desc,
+                        url,
+                        view,
+                        category,
+                        uses,
+                      } = post;
+                      return (
+                        <div
+                          key={id}
+                          className='cards mb-20 relative max-w-full items-center border-2'
+                        >
+                          <Link href=''>
+                            <a>
+                              <img
+                                className=' relative m-auto'
+                                src={img}
+                                alt=''
+                              />
+                              <div className='cards-text absolute  text-gray-800'>
+                                <div className=' font-comorant font-semibold'>
+                                  <span className='sm:text-lg text-sm'>
+                                    0{id}
+                                  </span>
+                                  <p className='whitespace text-5xl'>{title}</p>
+                                  <div className='text-xl'>
+                                    <em> #{uses.fremwork}</em>
+                                    <em> #{uses.fremwork2}</em>
+                                    <em> #{uses.fremwork3}</em>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
 
-                {posts.map((post) => {
-                  const { id, title, img, desc, url, view, category } = post;
-
-                  return (
-                    <div
-                      key={id}
-                      className='relative md:flex md:mt-40 items-center	e mt-10 justify-between'
-                    >
-                      <div className='xl:mr-20 mr-10 mb-10'>
-                        <p className='text-red-100 text-2xl capitalize  font-serif mb-4'>
-                          {title}
-                        </p>
-                        <span className='text-red-100 text-base'>{desc}</span>
-                        <div className='text-gray-100 mt-4'>{category}</div>
-                        <ul className='flex mt-4'>
-                          <li className='mr-2'>
-                            <Link href={view}>
-                              <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                                Live
-                              </a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href={url}>
-                              <a className='bg-gray-50 py-1 px-2 font-bold text-red-800 rounded'>
-                                sources
-                              </a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <img key={img} src={img} alt='worktimg' />
-                      </div>
-                    </div>
-                  );
-                })}
                 {/* car worksparts end*/}
               </div>
             </div>

@@ -25,28 +25,28 @@ function Navbar() {
               <div>
                 <Link href='/'>
                   <a>
-                    <p className='text-gray-50 font-bold text-xl'>RON</p>
+                    <p className='text-gray-800 font-bold text-xl'>RON</p>
                   </a>
                 </Link>
               </div>
               <ul className='nav flex tracking-wide'>
                 <li className='link overflow-hidden items-center py-2 pr-8 block '>
                   <Link href='/work'>
-                    <a className=' text-gray-50 overflow-hidden  relative py-2  hover:text-gray-600'>
+                    <a className=' text-gray-800 overflow-hidden  relative py-2  hover:text-gray-600'>
                       Work
                     </a>
                   </Link>
                 </li>
                 <li className='pr-8 link overflow-hidden py-2'>
                   <Link href='/about'>
-                    <a className='text-gray-50 overflow-hidden	 relative  py-2 hover:text-gray-600'>
+                    <a className='text-gray-800 overflow-hidden	 relative  py-2 hover:text-gray-600'>
                       About
                     </a>
                   </Link>
                 </li>
                 <li className='md:pr-8 pr-4 link overflow-hidden py-2'>
                   <Link href='/contact'>
-                    <a className='text-gray-50 overflow-hidden relative py-2 hover:text-gray-600'>
+                    <a className='text-gray-800 overflow-hidden relative py-2 hover:text-gray-600'>
                       Contact
                     </a>
                   </Link>

@@ -14,7 +14,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        lora: "'Lora', serif",
+        averia: "'Averia Serif Libre', cursive",
+        comorant: "'Cormorant Garamond', serif",
+        domine: "'Domine', serif",
       },
     },
   },

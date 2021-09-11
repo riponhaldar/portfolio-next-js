@@ -34,26 +34,26 @@ function Work({ posts }) {
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
         <div className='mt-20'>
           <div className='text-gray-50 sm:flex flex-wrap'>
-            <div className='sm:w-1/5 w-full mb-7 border-red-400'>
+            <div className='sm:w-1/5 w-full mb-7 '>
               <div className='sm:ml-10'>
-                <div className='text-2xl md:text-4xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
+                <div className='text-2xl md:text-4xl  ml-2  mb-8 relative font-comorant font-semibold  text-gray-600 capitalize'>
                   <p className='inline-block px-2  relative'>
                     <span className='after__ele relative z-50'>
                       All Projects
                     </span>
-                    <span className='absolute opacity-80 bg-purple-900	w-full h-2 md:h-2 left-0 bottom-0 md:bottom-0 z-0'></span>
+                    <span className='absolute opacity-80 bg-purple-200	w-full h-2 md:h-2 left-0 bottom-0 md:bottom-0 z-0'></span>
                   </p>
                 </div>
-                <ul className='flex sm:flex-col list-disc w-full text-gray-50 overflow-x-auto'>
+                <ul className='flex sm:flex-col  w-full  overflow-x-auto'>
                   {categories.map((category, index) => {
                     return (
                       <li
-                        className='cursor-pointer list-disc sm:mb-5 mb-2 mr-2 '
+                        className='cursor-pointer sm:mb-5 mb-2 mr-2 '
                         type='button'
                         key={index}
                         onClick={() => filterItems(category)}
                       >
-                        <a className='sm:text-md text-lg bg-purple-800 text-gray-200 px-4 py-1 rounded-lg items-center'>
+                        <a className='sm:text-md px-4 py-1 rounded-lg items-center text-lg font-averia bg-gray-300 text-gray-800 '>
                           #{category}
                         </a>
                       </li>
@@ -73,23 +73,23 @@ function Work({ posts }) {
                       <Link href='/' key={id}>
                         <div className=' w-96 sm:mr-8 sm:mb-10 mb-8 sm:mx-px pr-4 mx-auto cursor-pointer overflow-hidden'>
                           <img
-                            className='sm:w-full h-56	mx-auto rounded '
+                            className='allimages overflow-hidden sm:w-full  h-56	mx-auto rounded '
                             src={img}
                             alt=''
                           />
 
                           <div className='mt-2'>
-                            <span className='text-2xl block font-serif capitalize text-gray-300'>
+                            <span className='text-2xl bloc font-averia capitalize text-gray-800'>
                               {title}
                             </span>
                             <div className='text-sm flex mt-2 cursor-pointer'>
-                              <span className='mr-2  rounded px-2 delay-100 ease-out bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
+                              <span className='mr-2 rounded px-2 py-1 delay-100 ease-out bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
                                 {uses.fremwork}
                               </span>
-                              <span className='mr-2  rounded px-2  delay-100 ease-out bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
+                              <span className='mr-2 rounded px-2 py-1  delay-100 ease-out bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
                                 {uses.fremwork2}
                               </span>
-                              <span className='mr-2  rounded px-2  delay-100 ease-out	bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
+                              <span className='mr-2 rounded px-2 py-1 delay-100 ease-out	bg-purple-800 text-gray-200 hover:text-purple-600 hover:bg-gray-200'>
                                 {uses.fremwork3}
                               </span>
                             </div>

@@ -37,8 +37,7 @@ function About() {
     });
     tl.from(abouttextFast, 1.2, {
       duration: 15,
-      opacity: 0,
-      y: -100,
+      y: 140,
       scrollTrigger: {
         scrub: true,
         trigger: abouttextFast,
@@ -46,14 +45,13 @@ function About() {
         end: 'bottom bottom-=200',
         // markers: true,
       },
-    }).from(abouttextSec, {
+    }).from(abouttextSec, 3, {
       duration: 15,
-      opacity: 0,
       y: 100,
       scrollTrigger: {
         scrub: true,
         trigger: abouttextSec,
-        start: 'top bottom-=250',
+        start: 'top bottom-=100',
         end: 'bottom bottom-=200',
         // markers: true,
       },
@@ -63,7 +61,7 @@ function About() {
   return (
     <>
       <div className='px-2 md:px-4 mb-20'>
-        <div className='text-3xl md:text-5xl relative  font-semibold  text-indigo-50 ml-2 capitalize mb-8'>
+        <div className='text-3xl md:text-5xl relative font-comorant font-semibold  text-gray-800 ml-2 capitalize mb-8'>
           <p
             className='inline-block px-2  relative'
             ref={(el) => (aboutText = el)}
@@ -74,7 +72,7 @@ function About() {
         </div>
         <div iv className='px-2 md:px-8 text-left'>
           <div
-            className='text-gray-50 text-2xl md:text-4xl xl:text-8xl font-serif tracking-normal font-bold xl:font-medium'
+            className=' text-gray-800 text-2xl md:text-4xl xl:text-8xl font-averia tracking-normal font-bold xl:font-medium'
             ref={(el) => (aboutTextEnd = el)}
           >
             <div className='leading-normal'>
