@@ -51,6 +51,24 @@ export default function Home({ posts }) {
 
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
         <Fastpage />
+        <div className=' relative'>
+          <div className=' w-full flex relative  overflow-hidden  transform rotate-180 opacity-20	 z-0 '>
+            <div className='scroll-text2 text-gray-900 text-8xl whitespace-nowrap font-domine uppercase'>
+              <span>-Frontend</span> Developer <span>-Designer</span>
+              Developer <span>-Frontend</span> Designer
+              <span>-Frontend</span> Designer <span>-Frontend</span>
+              Developer
+            </div>
+          </div>
+          <div className=' w-full flex relative overflow-hidden opacity-50	 z-0 '>
+            <div className='scroll-text text-gray-900 text-8xl whitespace-nowrap font-domine uppercase'>
+              <span>-Frontend</span> Developer <span>-Designer</span>
+              Developer <span>-Designer </span> Developer
+              <span>-Frontend</span> Designer <span>-Frontend</span>
+              Developer
+            </div>
+          </div>
+        </div>
         <About />
         {/* project parts*/}
         <div className=' mt-8'>
@@ -94,7 +112,7 @@ export default function Home({ posts }) {
                               />
                               <div className='cards-text absolute  text-gray-800'>
                                 <div className=' font-comorant font-semibold'>
-                                  <span className='sm:text-lg text-sm'>
+                                  <span className='sm:text-lg text-sm font-comorant'>
                                     0{id}
                                   </span>
                                   <p className='whitespace uppercase drop-shadow text-6xl'>

@@ -76,6 +76,9 @@
     -webkit-text-stroke: 1px #000;
     color: transparent;
   }
+  .icons {
+    color: red;
+  }
   @keyframes animate {
     0% {
       transform: translateZ(0);
