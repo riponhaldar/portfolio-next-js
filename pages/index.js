@@ -97,7 +97,9 @@ export default function Home({ posts }) {
                                   <span className='sm:text-lg text-sm'>
                                     0{id}
                                   </span>
-                                  <p className='whitespace text-5xl'>{title}</p>
+                                  <p className='whitespace uppercase drop-shadow text-6xl'>
+                                    {title}
+                                  </p>
                                   <div className='text-xl'>
                                     <em> #{uses.fremwork}</em>
                                     <em> #{uses.fremwork2}</em>
