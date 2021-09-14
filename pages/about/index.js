@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Link from 'next/link';
+
 import Image from 'next/image';
 import ripon1st from '../../public/ripon1st.jpg';
 function about() {
@@ -25,20 +27,36 @@ function about() {
       </Head>
 
       <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
-        <div className='mt-72 z-50'>
-          <div className='sm:pl-10 pl-0 mb-20'>
-            <div className='text-gray-900 font-domine sm:text-4xl text-lg font-bold '>
+        <div className='sm:mt-60 mt-32 z-50'>
+          <div className='sm:pl-10 pl-0 sm:mb-20 mb-10 relative'>
+            <div className=' text-gray-900 font-domine sm:text-4xl text-lg font-bold '>
               <span className='overflow-hidden'>hello there,</span> <br />
               <span>My name is</span> <br />
-              <span className='overflow-hidden underline text-red-400'>
+              <span className=' overflow-hidden cursor-pointer  underline text-red-400'>
                 Ripon Haldar &
               </span>
               <br />
-              <span> I am an Fronetend Developer</span>
+              <span> I am a Fronetend Developer</span>
             </div>
           </div>
 
-          <div className='lg:h-screen sm:mt-20 mt-5 sm:mb-8 '>
+          <div className='lg:h-screen sm:mt-20 mt-3 sm:mb-8 '>
+            <div className='sm:float-left block lg:w-1/3 sm:mr-8 mb-4 sm:mt-10 '>
+              <div className='relative  flex mx-auto justify-center'>
+                <img
+                  className='sm:w-72 w-40 opacity-70'
+                  src='/resume.png'
+                  alt='resume'
+                />
+                <div className='absolute top-1/2'>
+                  <a href='/resume.pdf' download>
+                    <button className='bg-red-200 sm:py-1 py-2  sm:px-2 px-4 rounded text-sm font-bold'>
+                      Download
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
             <div className='sm:float-right block lg:w-1/3 sm:mr-8 mb-10'>
               <div className='text-3xl mb-2'>HI,</div>
               <div className='mb-4 text-lg leading-7'>

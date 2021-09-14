@@ -85,54 +85,7 @@ export default function Home({ posts }) {
             <div className='text-gray-800  relative md:mx-12 mx-4 px-2'>
               <div>
                 {/* car worksparts*/}
-                <div className='mt-28'>
-                  <div>
-                    {posts.map((post) => {
-                      const {
-                        id,
-                        title,
-                        img,
-                        desc,
-                        url,
-                        view,
-                        category,
-                        uses,
-                      } = post;
-                      return (
-                        <div
-                          key={id}
-                          className='cards mb-20 relative max-w-full items-center border-2'
-                        >
-                          <Link href=''>
-                            <a>
-                              <img
-                                className=' relative m-auto'
-                                src={img}
-                                alt=''
-                              />
-                              <div className='cards-text absolute  text-gray-800'>
-                                <div className=' font-comorant font-semibold'>
-                                  <span className='sm:text-lg text-sm font-comorant'>
-                                    0{id}
-                                  </span>
-                                  <p className='whitespace uppercase drop-shadow text-6xl'>
-                                    {title}
-                                  </p>
-                                  <div className='text-xl'>
-                                    <em> #{uses.fremwork}</em>
-                                    <em> #{uses.fremwork2}</em>
-                                    <em> #{uses.fremwork3}</em>
-                                  </div>
-                                </div>
-                              </div>
-                            </a>
-                          </Link>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
+                <h1>project pats</h1>
                 {/* car worksparts end*/}
               </div>
             </div>

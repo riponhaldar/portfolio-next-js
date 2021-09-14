@@ -13,7 +13,7 @@
 
 @layer base {
   body {
-    background: #fcfcfc;
+    background: #f4f7f6;
   }
   .fullpags {
     visibility: hidden;
@@ -78,6 +78,11 @@
   }
   .icons {
     color: red;
+  }
+  .name_img {
+  }
+  .name_hover span:hover .name_img {
+    display: none;
   }
   @keyframes animate {
     0% {

@@ -23,48 +23,52 @@ function Footer() {
   ];
 
   return (
-    <div className='md:container mx-auto  px-6 md:px-16 mt-4 sm:mt-10 relative py-4'>
-      <div className='sm:flex justify-between'>
-        <div className='z-10'>
-          <ul>
-            {social.map((socialMe) => {
-              return (
-                <Link key={socialMe.id} href={socialMe.url}>
-                  <a target='_blank'>
-                    <li className='mb-8  lg:text-5xl sm:text-3xl text-2xl cursor-pointer text-gray-500 capitalize align-middle '>
-                      <span className='mr-8 text-lg  font-comorant '>
-                        {socialMe.id}
-                      </span>
-                      <span className='hover:underline'>{socialMe.name}</span>
-                    </li>
+    <>
+      <div className='bg-white w-full' id='contact'>
+        <div className='md:container mx-auto  px-6 md:px-16 mt-4 sm:mt-10 relative py-4'>
+          <div className='sm:flex justify-between'>
+            <div className='z-10'>
+              <ul>
+                {social.map((socialMe) => {
+                  return (
+                    <Link key={socialMe.id} href={socialMe.url}>
+                      <a target='_blank'>
+                        <li className='mb-8  lg:text-5xl sm:text-3xl text-2xl cursor-pointer text-gray-500 capitalize align-middle '>
+                          <span className='mr-8 text-lg  font-comorant '>
+                            {socialMe.id}
+                          </span>
+                          <span className='underline'>{socialMe.name}</span>
+                        </li>
+                      </a>
+                    </Link>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='sm:mt-20 mt-10 z-10'>
+              <div className='cursor-pointer'>
+                <Link href='https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJNqtLBRpsfMvnZPhrBzFhzWVHTgcsHNgQVdFvcptrrSMhJgZbPllXTNsVFPkWxLJTgGQDB'>
+                  <a
+                    target='_blank'
+                    className='sm:text-3xl text-2xl text-gray-500 font-bold '
+                  >
+                    <span>riponahaldar006@gmail.com</span>
                   </a>
                 </Link>
-              );
-            })}
-          </ul>
-        </div>
-        <div className='sm:mt-20 mt-10 z-10'>
-          <div className='cursor-pointer'>
-            <Link href='https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJNqtLBRpsfMvnZPhrBzFhzWVHTgcsHNgQVdFvcptrrSMhJgZbPllXTNsVFPkWxLJTgGQDB'>
-              <a
-                target='_blank'
-                className='sm:text-3xl text-2xl text-gray-500 font-bold '
-              >
-                <span>riponahaldar006@gmail.com</span>
-              </a>
-            </Link>
+              </div>
+              <div className='sm:mt-8 mt-4 text-4xl text-gray-600 font-comorant font-bold'>
+                +91 - 7001186809
+              </div>
+            </div>
           </div>
-          <div className='sm:mt-8 mt-4 text-4xl text-gray-600 font-comorant font-bold'>
-            +91 - 7001186809
+          <div>
+            <div className='text-center text-xl font-bold mt-10 font-comorant'>
+              ©RiponHaldar <span className='font-comorant'>-2021</span>{' '}
+            </div>
           </div>
         </div>
       </div>
-      <div>
-        <div className='text-center text-xl font-bold mt-10 font-comorant'>
-          ©RiponHaldar <span className='font-comorant'>-2021</span>{' '}
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

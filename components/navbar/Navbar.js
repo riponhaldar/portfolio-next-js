@@ -10,7 +10,7 @@ function Navbar() {
       tl.from(
         navs,
         2,
-        { y: -10, x: -10, ease: Power3.easeOut, opacity: 0 },
+        { y: -10, x: -15, ease: Power3.easeOut, opacity: 0 },
         0.2
       );
     });
@@ -45,7 +45,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className='md:pr-8 pr-4 link overflow-hidden py-2'>
-                  <Link href='/contact'>
+                  <Link href='#contact'>
                     <a className='text-gray-800 overflow-hidden relative py-2 hover:text-gray-600'>
                       Contact
                     </a>
