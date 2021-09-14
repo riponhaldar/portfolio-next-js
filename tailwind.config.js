@@ -14,9 +14,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        averia: "'Averia Serif Libre', cursive",
-        comorant: "'Cormorant Garamond', serif",
-        domine: "'Domine', serif",
+        cormorant: "'Cormorant', serif",
+        montserrat: "'Montserrat', sans-serif",
+        playfair: "'Playfair Display', serif",
+        source: "'Source Sans Pro', sans-serif",
+        poppins: "'Poppins', sans-serif",
       },
     },
   },

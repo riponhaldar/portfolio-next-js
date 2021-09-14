@@ -56,7 +56,6 @@ function About() {
         // markers: true,
       },
     });
-    console.log(abouttextSec);
   });
   return (
     <>
@@ -76,19 +75,21 @@ function About() {
             ref={(el) => (aboutTextEnd = el)}
           >
             <div className='leading-normal'>
-              <span>a Hello Ripon</span>
+              <span>Thank you for visiting this site.</span>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorum,
+                I m Web designer & choreographer in Niigata,Japan.
                 <span className='text-red-400'> NEXT JS </span>
               </p>
             </div>
             <br />
             <div className='leading-normal'>
-              <span>TOasdasd.</span>
+              <span>
+                I am not good at urgent work, but I will do my best to undertake
+                the work.
+              </span>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorum, alias.
+                I have been doing web design work for three years. After working
+                for a design company for two years, I work as a freelancer.
               </p>
             </div>
           </div>
