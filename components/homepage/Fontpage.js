@@ -120,7 +120,7 @@ function Fontpage() {
             </div>
           </div>
           <div
-            className='scroll absolute   lg:-bottom-28  -bottom-20   
+            className='scroll absolute   lg:-bottom-28  sm:-bottom-20 -bottom-8   
            justify-center'
           >
             <img className='w-64' src='/scroll.gif ' alt='' />
