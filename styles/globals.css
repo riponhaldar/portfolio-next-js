@@ -16,7 +16,19 @@
     /* dark-mode  */
     /* background: #16161f; */
     background: #f1efe9;
+
     /* color: #fff; */
+  }
+
+  .image-s {
+    /* display: none; */
+    position: absolute;
+    /* transform: translateX(-101%); */
+    transition: 0.6s;
+  }
+  .hover-image:hover .image-s {
+    display: block;
+    ransition: transform 0.5s cubic-bezier(0.5, 0.7, 0.4, 1);
   }
   .fullpags {
     visibility: hidden;

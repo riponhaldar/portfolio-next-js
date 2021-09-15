@@ -1,4 +1,4 @@
-import { TweenMax, TimelineLite, Power3, Back } from 'gsap';
+import { TweenMax, TimelineLite, Power3, Back, gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 function Fontpage() {
@@ -11,6 +11,7 @@ function Fontpage() {
   let ii = useRef(null);
   let vv = useRef(null);
   let ee = useRef(null);
+  let scrolls = useRef(null);
 
   // let text = textSplit.split(' ');
   // console.log(text);
@@ -19,20 +20,18 @@ function Fontpage() {
     let wellcome = fontName.children[0];
     const website = fontName.children[1];
     const welcome = fontName.children[2];
-    tl.staggerFrom(wellcome.children, 1.8, {
+    // const scroll = scrolls.children;
+    tl.from(wellcome.children, 1.8, {
       y: 130,
-      delay: 1,
-      ease: Power3.easeOut,
+      ease: Back.easeOut,
       rotation: 2,
-      stagger: 0.2,
-      opacity: 0,
     })
       .from(
         website.children,
         1.8,
         {
           y: 130,
-          ease: Power3.easeOut,
+          ease: Back.easeOut,
           rotation: 2,
         },
         '-=1.6'
@@ -66,6 +65,17 @@ function Fontpage() {
           stagger: 0.2,
         },
         '-=3'
+      )
+      .from(
+        scrolls,
+        1.4,
+        {
+          y: 30,
+          delay: 1,
+          ease: Back.easeOut,
+          opacity: 0,
+        },
+        '-=3.2'
       );
   });
   return (
@@ -120,10 +130,11 @@ function Fontpage() {
             </div>
           </div>
           <div
-            className='scroll absolute   lg:-bottom-28  sm:-bottom-20 -bottom-8   
+            className='scroll absolute  lg:-bottom-28  sm:-bottom-20 -bottom-4   
            justify-center'
+            ref={(el) => (scrolls = el)}
           >
-            <img className='w-64' src='/scroll.gif ' alt='' />
+            <img className='sm:w-64 ' src='/scroll.gif ' alt='' />
           </div>
         </div>
 

@@ -1,9 +1,83 @@
 import Head from 'next/head';
-import Link from 'next/link';
 
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import ripon1st from '../../public/ripon1st.jpg';
-function about() {
+import { TweenMax, TimelineLite, Power3, Back, gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+function About() {
+  let revelsText = useRef(null);
+  let resume = useRef(null);
+  let aboutTexts = useRef(null);
+  let skilss = useRef(null);
+  let tl = new TimelineLite({ delay: 0.8 });
+  useEffect(() => {
+    const reveelone = revelsText.children[0];
+    const reveeltwo = revelsText.children[1];
+    const reveelthree = revelsText.children[2];
+    const reveelfore = revelsText.children[3];
+    tl.from(
+      [
+        reveelone.children,
+        reveeltwo.children,
+        reveelthree.children,
+        reveelfore.children,
+      ],
+      1.4,
+      {
+        y: 100,
+        opacity: 0,
+        stagger: 0.3,
+        ease: Power3.easeOut,
+      }
+    )
+      .from(
+        resume,
+        1.8,
+        {
+          duration: 15,
+          y: 100,
+          opacity: 0,
+          ease: Power3.easeOut,
+        },
+        '-=1.2'
+      )
+      .from(
+        aboutTexts,
+        1.8,
+        {
+          duration: 15,
+          y: 100,
+          opacity: 0,
+          ease: Power3.easeOut,
+          scrollTrigger: {
+            scrub: true,
+            trigger: aboutTexts,
+            start: 'top bottom-=0',
+            end: 'bottom bottom-=0',
+            markers: true,
+          },
+        },
+        '-=1.2'
+      );
+    tl.from('ul li', 1.2, {
+      duration: 5,
+      opacity: 0,
+      y: 111,
+      stagger: 0.3,
+      scrollTrigger: {
+        scrub: true,
+        trigger: skilss,
+        start: 'top bottom-=100',
+        end: 'bottom bottom-=200',
+        // markers: true,
+      },
+    });
+  });
+
+  // hovers
+
+  // hovers
   const allIcons = [
     { id: '1', url: '/icons/html5.svg' },
     { id: '2', url: '/icons/css3.svg' },
@@ -26,22 +100,38 @@ function about() {
         <link rel='icon' href='/mack_herry.png' />
       </Head>
 
-      <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50'>
-        <div className='sm:mt-60 mt-32 z-50'>
+      <div className='lg:container mx-auto lg:px-6 p-5  md:px-16 z-50  '>
+        <div className='sm:mt-60 mt-32 z-50 relative'>
           <div className='sm:pl-10 pl-0 sm:mb-20 mb-10 relative'>
-            <div className=' text-gray-900 font-domine sm:text-4xl text-lg font-bold '>
-              <span className='overflow-hidden'>hello there,</span> <br />
-              <span>My name is</span> <br />
-              <span className=' overflow-hidden cursor-pointer  underline text-red-400'>
-                Ripon Haldar &
-              </span>
-              <br />
-              <span> I am a Fronetend Developer</span>
+            <div
+              className=' text-gray-900 font-domine sm:text-4xl text-lg font-bold'
+              ref={(el) => (revelsText = el)}
+            >
+              <div className='overflow-hidden'>
+                <div>hello there,</div>
+              </div>
+              <div className='overflow-hidden'>
+                <div>My name is</div>
+              </div>
+              <div className='hover-image block overflow-hidden cursor-pointer  underline text-red-400'>
+                <div className=' inline-block border-2'>Ripon Haldar &</div>
+                <img
+                  className='image-s sm:hidden block  absolute sm:-top-40 top-0 sm:inset-x-1/2 right-0  z-0 md:w-64  w-40  sm:opacity-80 opacity-40 '
+                  src='/me.jpg'
+                  alt=''
+                />
+              </div>
+              <div className='overflow-hidden'>
+                <div> I am a Fronetend Developer</div>
+              </div>
             </div>
           </div>
 
           <div className='lg:h-screen sm:mt-20 mt-3 sm:mb-8 '>
-            <div className='sm:float-left block lg:w-1/3 sm:mr-8 mb-4 sm:mt-10 '>
+            <div
+              className='sm:float-left block lg:w-1/3 sm:mr-8 mb-4 sm:mt-10 '
+              ref={(el) => (resume = el)}
+            >
               <div className='relative  flex mx-auto justify-center'>
                 <img
                   className='sm:w-72 w-40 opacity-70'
@@ -57,7 +147,10 @@ function about() {
                 </div>
               </div>
             </div>
-            <div className='sm:float-right block lg:w-1/3 sm:mr-8 mb-10'>
+            <div
+              className='sm:float-right block lg:w-1/3 sm:mr-8 mb-10'
+              ref={(el) => (aboutTexts = el)}
+            >
               <div className='text-3xl mb-2'>HI,</div>
               <div className='mb-4 text-lg leading-7'>
                 Lorem ipsum dolor sit amet consectetur,adipisicing elit.
@@ -76,15 +169,15 @@ function about() {
               </div>
             </div>
           </div>
-          <div className='lg:-mt-48 relative'>
+          <div className='lg:-mt-48 relative' ref={(el) => (skilss = el)}>
             <div className='sm:flex sm:justify-between sm:w-full '>
               <div className='text-gray-800 font-bold font-serif '>
                 <span> PROGRAMMING LANGUAGES & OTHERS :</span>
               </div>
               <div className='flex text-gray-500 font-bold font-sans uppercase sm:leading-loose leading-7   mt-4 '>
                 <ul className='mr-8'>
-                  <li>
-                    <span>-HTML/Css</span>
+                  <li className='overflow-hidden'>
+                    <div>-HTML/Css</div>
                   </li>
                   <li>
                     <span>-Sass</span>
@@ -143,7 +236,7 @@ function about() {
                   return (
                     <div key={icons.id} className='sm:pl-20 pl-10 mb-3'>
                       <img
-                        className='icons opacity-5 sm:w-28  w-14'
+                        className='icons opacity-5 sm:w-36  w-14'
                         src={icons.url}
                         alt=''
                       />
@@ -160,4 +253,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;

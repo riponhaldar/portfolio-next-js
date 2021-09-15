@@ -1,5 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { gsap, TimelineLite, Power3 } from 'gsap';
+import { useEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 function Footer() {
   const social = [
     { id: '01', name: 'Github', url: 'https://github.com/riponhaldar' },
@@ -24,20 +28,20 @@ function Footer() {
 
   return (
     <>
-      <div className='bg-white w-full' id='contact'>
+      <div className='bg-transparent			 w-full' id='contact'>
         <div className='md:container mx-auto  px-6 md:px-16 mt-4 sm:mt-10 relative py-4'>
           <div className='sm:flex justify-between'>
             <div className='z-10'>
-              <ul>
+              <ul className='mes'>
                 {social.map((socialMe) => {
                   return (
                     <Link key={socialMe.id} href={socialMe.url}>
                       <a target='_blank'>
                         <li className='mb-8  lg:text-5xl sm:text-3xl text-2xl cursor-pointer text-gray-500 capitalize align-middle '>
-                          <span className='mr-8 text-lg  font-comorant '>
+                          <div className='mr-8 text-lg  font-comorant '>
                             {socialMe.id}
-                          </span>
-                          <span className='underline'>{socialMe.name}</span>
+                          </div>
+                          <span className='underline '>{socialMe.name}</span>
                         </li>
                       </a>
                     </Link>
