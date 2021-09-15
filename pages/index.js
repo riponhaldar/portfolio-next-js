@@ -51,12 +51,15 @@ export default function Home({ posts }) {
         <Fontpage />
         <div className=' relative'>
           <div className=' w-full flex relative overflow-hidden  z-0 '>
-            <div className='scroll-text text-gray-900 text-8xl whitespace-nowrap font-domine uppercase'>
-              <span>- Frontend</span> Developer <span>,Designer</span>
-              <span>- Frontend</span> Developer <span>,Designer</span>
-              <span>- Frontend</span> Developer <span>,Designer</span>
-              <span>- Frontend</span> Developer <span>,Designer</span>
-              <span>- Frontend</span> Developer <span>,Designer</span>
+            <div className='scroll-text text-gray-900 text-7xl whitespace-nowrap font-domine uppercase'>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
+              <span>- Frontend</span> Developer <span>,Portfolio</span>
             </div>
           </div>
         </div>

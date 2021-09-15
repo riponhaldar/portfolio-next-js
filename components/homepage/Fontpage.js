@@ -70,8 +70,8 @@ function Fontpage() {
   });
   return (
     <>
-      <div className='lg:px-8 h-screen mb-20 sm:mb-1'>
-        <div className='sm:mb-12 mb-4 mt-20'>
+      <div className='lg:px-8 h-screen sm:mb-1 relative'>
+        <div className='sm:mb-10 mb-4 mt-20'>
           <div className='pt-10  mb-16'>
             <div
               className='lg:text-8xl sm:text-7xl text-5xl  font-playfair'
@@ -89,18 +89,9 @@ function Fontpage() {
               </div>
             </div>
           </div>
-          <div className='pt-20'>
-            <div className='float-left '>
-              <img
-                className='text-gray-400'
-                src='/circule.svg'
-                width={100}
-                height={100}
-                alt='asd'
-              />
-            </div>
+          <div className='pt-10 relative'>
             <div className='float-right lg:text-8xl sm:text-7xl text-5xl font-playfair '>
-              <div className='kss_class flex uppercase tracking-wider'>
+              <div className='  flex uppercase tracking-wider z-50'>
                 <div className='overflow-hidden' ref={(el) => (cat = el)}>
                   <div>C</div>
                 </div>
@@ -128,7 +119,14 @@ function Fontpage() {
               </div>
             </div>
           </div>
+          <div
+            className='scroll absolute   lg:-bottom-28  -bottom-20   
+           justify-center'
+          >
+            <img className='w-64' src='/scroll.gif ' alt='' />
+          </div>
         </div>
+
         {/*   <div className='sm:mb-12 mb-4' ref={(el) => (content = el)}>
           <h1>
             <div className='text-center wellcome sm:mr-40 mr-16 text-gray-800  xl:text-9xl lg:text-8xl sm:text-6xl text-4xl overflow-hidden font-domine font-bold'>
